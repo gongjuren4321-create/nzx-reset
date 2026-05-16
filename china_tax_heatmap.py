@@ -189,7 +189,7 @@ def build_map() -> Map:
 
 SOURCES_HTML = """
 <style>
-  body { margin-top: 40px !important; }
+  body { margin-top: 60px !important; }
   .chart-container { margin-top: 0 !important; }
 </style>
 <div style="
