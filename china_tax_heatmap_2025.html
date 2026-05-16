@@ -8,12 +8,48 @@
 
     
 </head>
-<body >
-    <div id="4bf32771af824b15bd4599ac054e954a" class="chart-container" style="width:1400px; height:900px; "></div>
+<body>
+<div style="
+    position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+    background: rgba(13,17,23,0.92);
+    border-bottom: 1px solid #1e3a5f;
+    padding: 8px 24px;
+    font-family: Microsoft YaHei, SimHei, sans-serif;
+    font-size: 12px;
+    color: #7fb3d3;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+">
+  <span style="color:#c8d6e5;font-weight:bold;">数据来源：</span>
+  <a href="https://www.gotohui.com/finance/topic-5508" target="_blank"
+     style="color:#00bcd4;text-decoration:none;"
+     onmouseover="this.style.textDecoration='underline'"
+     onmouseout="this.style.textDecoration='none'">
+    ① 2025年各省市税收收入排名（聚汇数据）
+  </a>
+  <span style="color:#1e3a5f;">|</span>
+  <a href="https://www.gotohui.com/finance/topic-5548" target="_blank"
+     style="color:#00bcd4;text-decoration:none;"
+     onmouseover="this.style.textDecoration='underline'"
+     onmouseout="this.style.textDecoration='none'">
+    ② 2025年全国税收收入前10省份（聚汇数据）
+  </a>
+  <span style="color:#1e3a5f;">|</span>
+  <a href="https://gks.mof.gov.cn/tongjishuju/202601/t20260130_3982923.htm" target="_blank"
+     style="color:#00bcd4;text-decoration:none;"
+     onmouseover="this.style.textDecoration='underline'"
+     onmouseout="this.style.textDecoration='none'">
+    ③ 财政部2025年财政收支情况
+  </a>
+  <span style="color:#555;margin-left:auto;font-size:11px;">上海、北京数据为估算值</span>
+</div>
+
+    <div id="13b585de398146259033f45c27c94bc2" class="chart-container" style="width:1400px; height:900px; "></div>
     <script>
-        var chart_4bf32771af824b15bd4599ac054e954a = echarts.init(
-            document.getElementById('4bf32771af824b15bd4599ac054e954a'), 'white', {renderer: 'canvas', locale: 'ZH'});
-        var option_4bf32771af824b15bd4599ac054e954a = {
+        var chart_13b585de398146259033f45c27c94bc2 = echarts.init(
+            document.getElementById('13b585de398146259033f45c27c94bc2'), 'white', {renderer: 'canvas', locale: 'ZH'});
+        var option_13b585de398146259033f45c27c94bc2 = {
     "backgroundColor": "#0d1117",
     "animation": true,
     "animationThreshold": 2000,
@@ -253,7 +289,7 @@
             "show": true,
             "text": "2025\u5e74 \u00b7 \u4e2d\u56fd\u5404\u7701\u7a0e\u6536\u6536\u5165\u70ed\u529b\u56fe",
             "target": "blank",
-            "subtext": "\u6570\u636e\u6765\u6e90\uff1a\u805a\u6c47\u6570\u636e / \u5404\u7701\u8d22\u653f\u5385\u516c\u544a | \u5355\u4f4d\uff1a\u4ebf\u5143\u4eba\u6c11\u5e01",
+            "subtext": "\u6570\u636e\u6765\u6e90\uff1a\u805a\u6c47\u6570\u636e (gotohui.com/finance/topic-5508 \u00b7 topic-5548) / \u5404\u7701\u8d22\u653f\u5385\u516c\u544a | \u5355\u4f4d\uff1a\u4ebf\u5143\u4eba\u6c11\u5e01",
             "subtarget": "blank",
             "left": "center",
             "top": "20px",
@@ -318,7 +354,7 @@
         "borderWidth": 0
     }
 };
-        chart_4bf32771af824b15bd4599ac054e954a.setOption(option_4bf32771af824b15bd4599ac054e954a);
+        chart_13b585de398146259033f45c27c94bc2.setOption(option_13b585de398146259033f45c27c94bc2);
     </script>
 </body>
 </html>

@@ -106,7 +106,10 @@ def build_map() -> Map:
         .set_global_opts(
             title_opts=opts.TitleOpts(
                 title="2025年 · 中国各省税收收入热力图",
-                subtitle="数据来源：聚汇数据 / 各省财政厅公告 | 单位：亿元人民币",
+                subtitle=(
+                    "数据来源：聚汇数据 (gotohui.com/finance/topic-5508 · topic-5548) "
+                    "/ 各省财政厅公告 | 单位：亿元人民币"
+                ),
                 pos_left="center",
                 pos_top="20px",
                 title_textstyle_opts=opts.TextStyleOpts(
@@ -184,10 +187,59 @@ def build_map() -> Map:
     return c
 
 
+SOURCES_HTML = """
+<div style="
+    position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+    background: rgba(13,17,23,0.92);
+    border-bottom: 1px solid #1e3a5f;
+    padding: 8px 24px;
+    font-family: Microsoft YaHei, SimHei, sans-serif;
+    font-size: 12px;
+    color: #7fb3d3;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+">
+  <span style="color:#c8d6e5;font-weight:bold;">数据来源：</span>
+  <a href="https://www.gotohui.com/finance/topic-5508" target="_blank"
+     style="color:#00bcd4;text-decoration:none;"
+     onmouseover="this.style.textDecoration='underline'"
+     onmouseout="this.style.textDecoration='none'">
+    ① 2025年各省市税收收入排名（聚汇数据）
+  </a>
+  <span style="color:#1e3a5f;">|</span>
+  <a href="https://www.gotohui.com/finance/topic-5548" target="_blank"
+     style="color:#00bcd4;text-decoration:none;"
+     onmouseover="this.style.textDecoration='underline'"
+     onmouseout="this.style.textDecoration='none'">
+    ② 2025年全国税收收入前10省份（聚汇数据）
+  </a>
+  <span style="color:#1e3a5f;">|</span>
+  <a href="https://gks.mof.gov.cn/tongjishuju/202601/t20260130_3982923.htm" target="_blank"
+     style="color:#00bcd4;text-decoration:none;"
+     onmouseover="this.style.textDecoration='underline'"
+     onmouseout="this.style.textDecoration='none'">
+    ③ 财政部2025年财政收支情况
+  </a>
+  <span style="color:#555;margin-left:auto;font-size:11px;">上海、北京数据为估算值</span>
+</div>
+"""
+
+
+def inject_sources(html_path: str) -> None:
+    with open(html_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    import re
+    content = re.sub(r"<body\s*>", f"<body>{SOURCES_HTML}", content, count=1)
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
 def main():
     chart = build_map()
     output_file = "china_tax_heatmap_2025.html"
     chart.render(output_file)
+    inject_sources(output_file)
     print(f"✅ 热力图已生成：{output_file}")
     print(f"   用浏览器打开即可查看交互式地图。")
     print()
