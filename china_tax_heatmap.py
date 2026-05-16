@@ -189,8 +189,11 @@ def build_map() -> Map:
 
 SOURCES_HTML = """
 <style>
-  body { margin-top: 180px !important; }
-  .chart-container { margin-top: 0 !important; }
+  body { margin: 0 !important; padding-top: 40px !important; box-sizing: border-box; }
+  .chart-container {
+    width: 100vw !important;
+    height: calc(100vh - 40px) !important;
+  }
 </style>
 <div style="
     position: fixed; top: 0; left: 0; right: 0; z-index: 9999;

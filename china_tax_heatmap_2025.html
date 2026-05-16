@@ -10,8 +10,11 @@
 </head>
 <body>
 <style>
-  body { margin-top: 180px !important; }
-  .chart-container { margin-top: 0 !important; }
+  body { margin: 0 !important; padding-top: 40px !important; box-sizing: border-box; }
+  .chart-container {
+    width: 100vw !important;
+    height: calc(100vh - 40px) !important;
+  }
 </style>
 <div style="
     position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
@@ -49,11 +52,11 @@
   <span style="color:#555;margin-left:auto;font-size:11px;">上海、北京数据为估算值</span>
 </div>
 
-    <div id="fd0564c5f2dc47468e2447646499dfd9" class="chart-container" style="width:1400px; height:900px; "></div>
+    <div id="062a770421464e96889a843d24dae40c" class="chart-container" style="width:1400px; height:900px; "></div>
     <script>
-        var chart_fd0564c5f2dc47468e2447646499dfd9 = echarts.init(
-            document.getElementById('fd0564c5f2dc47468e2447646499dfd9'), 'white', {renderer: 'canvas', locale: 'ZH'});
-        var option_fd0564c5f2dc47468e2447646499dfd9 = {
+        var chart_062a770421464e96889a843d24dae40c = echarts.init(
+            document.getElementById('062a770421464e96889a843d24dae40c'), 'white', {renderer: 'canvas', locale: 'ZH'});
+        var option_062a770421464e96889a843d24dae40c = {
     "backgroundColor": "#0d1117",
     "animation": true,
     "animationThreshold": 2000,
@@ -358,7 +361,7 @@
         "borderWidth": 0
     }
 };
-        chart_fd0564c5f2dc47468e2447646499dfd9.setOption(option_fd0564c5f2dc47468e2447646499dfd9);
+        chart_062a770421464e96889a843d24dae40c.setOption(option_062a770421464e96889a843d24dae40c);
     </script>
 </body>
 </html>
